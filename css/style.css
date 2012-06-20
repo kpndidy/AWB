@@ -1,7 +1,7 @@
 ﻿body
 {
 	font-size:12pt;
-	line-height:150%;			/* 行間の指定 */
+	line-height:150%;
 	background-color:#edf7ff;
 	margin:50px;
 	text-align : center;
@@ -12,7 +12,7 @@ div#container
 	width:800px;
 	margin-left:auto;
 	margin-right:auto;
-	border-top:3px double #008000;	/* 枠線 */
+	border-top:3px double #008000;
 	border-bottom:3px double #008000;
 	border-right:3px double #008000;
 	border-left:3px double #008000;

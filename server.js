@@ -3,27 +3,21 @@
 		, path = require('path')
 		, fs = require('fs');
 
-// ポート
-app.listen(8080);
+// Port
+app.listen();
 
-// indexを読み込み
+// Read Index.html
 app.get('/', function (req, res)
 {
 	res.sendfile(__dirname + '/index.html');
 });
 
-// CSSとJSを読み込む
+// Read CSS and JS file
 app.get(/^\/(?:css|js)\/.+/, function(req, res)
 {
 	var contentType = undefined, filePath = __dirname + req.url;
-	// req.url は絶対パスになってるので
-	// __dirnameでファイルパスへ置き換える
-
-	// ファイルタイプでcontentTypeを切り替え
 	switch( path.extname(req.url) )
 	{
-		// extname(hoge)はURLの最後の.以降を返す
-		// hoge.css => .css
 		case '.css':
 			contentType = 'text/css';
 	    	break;
@@ -34,7 +28,6 @@ app.get(/^\/(?:css|js)\/.+/, function(req, res)
 			contentType = 'text/html';
 	}
 
-	// ファイルがあればほげほげ
 	path.exists(filePath, function(exists)
 	{
 		console.log(exists);
@@ -58,24 +51,24 @@ app.get(/^\/(?:css|js)\/.+/, function(req, res)
 	});
 });
 
-// 番号
+// Number
 $cnt = 0;
 
 io.sockets.on('connection', function (socket)
 {
-	// クライアントとの接続確認
+	// Check Connection
 	socket.emit('connect');
 
 	socket.on('From_Client', function(data, data2)
 	{
 		$cnt++;
 		var GetDate = new Date();
-		var PopDate = GetDate.getYear() + "年" +
-						GetDate.getMonth() + 1 + "月" +
-						GetDate.getDate() + "日" +
-						GetDate.getHours() + "時" +
-						GetDate.getMinutes() + "分" +
-						GetDate.getSeconds() + "秒";
+		var PopDate = GetDate.getYear() + "Y" +
+						GetDate.getMonth() + 1 + "M" +
+						GetDate.getDate() + "D" +
+						GetDate.getHours() + "h" +
+						GetDate.getMinutes() + "m" +
+						GetDate.getSeconds() + "s";
 
 		var msg = "<div id = \"No\">No'" + $cnt + "\/<strong>" + data2 + "</strong>\/" + ":" + PopDate + "<br>" + data + "</div>";
 		
