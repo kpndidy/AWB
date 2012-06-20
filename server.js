@@ -54,7 +54,7 @@ app.get(/^\/(?:css|js)\/.+/, function(req, res)
 // Number
 $cnt = 0;
 
-io.sockets.on('connection', function (socket)
+io.sockets.on('connection', function(socket)
 {
 	// Check Connection
 	socket.emit('connect');
