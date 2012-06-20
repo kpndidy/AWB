@@ -1,0 +1,36 @@
+﻿body
+{
+	font-size:12pt;
+	line-height:150%;			/* 行間の指定 */
+	background-color:#edf7ff;
+	margin:50px;
+	text-align : center;
+}
+
+div#container
+{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+	border-top:3px double #008000;	/* 枠線 */
+	border-bottom:3px double #008000;
+	border-right:3px double #008000;
+	border-left:3px double #008000;
+	text-align:left;
+	background-color:#ffffff;
+	padding:25px;
+}
+
+article#out
+{
+	margin-top:15px;
+	padding:30px;
+	border:1px solid silver;
+	background-color:#edf7ff;
+}
+
+article#out div
+{
+	margin-top:10px;
+	border:1px solid #000000;
+}

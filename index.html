@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang = "ja">
+	<head>
+    	<meta charset="utf-8">
+    	<title>サンプル</title>
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <link href="/css/style.css" type="text/css" rel=stylesheet>
+        <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/client.js"></script>
+        <script>
+        <!--
+		-->
+        </script>
+    </head>
+
+    <body>
+    	<p>一行掲示板</p>
+        <p id="first">Not connection</p>
+        
+        <!-- メインフレーム -->
+    	<div id = "container">
+        	<!-- セクション -->
+        	<section>
+        		<!-- インプットフレーム -->
+        		<article id = "in">
+                	<form id = "m_form">
+                    	<fieldset>
+	                		<!-- エディタとボタンを配置 -->
+                            <input size = "20" type = "text" value = "Name" id = "NameText">
+	                    	<input size = "50" type = "text" value = "Message" id = "MsgText">
+                            <input type = "button" value = "送信" id = "SendButton">
+                        </fieldset>
+                    </form>
+        		</article>
+                
+                <!-- アウトプットフレーム -->
+                <article id = "out">
+                	<!-- 書き込みを表示する -->
+                </article>
+            </section>
+        </div>
+    </body>
+</html>
